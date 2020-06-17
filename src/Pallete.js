@@ -22,7 +22,7 @@ class Pallete extends React.Component{
 
         return (
             <div className="Pallete">
-                <div style={{padding:'10px'}}><Slider defaultValue={this.state.level} step={100} min={100} max={900} onAfterChange={this.changeLevel} /></div>
+                <div className="Pallete-slider"><Slider defaultValue={this.state.level} step={100} min={100} max={900} onAfterChange={this.changeLevel} /></div>
                 <div className="Pallete-colorboxes">{colorBoxes}</div>
             </div>
         );
