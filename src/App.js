@@ -6,10 +6,9 @@ import './App.css';
 
 class App extends React.Component{
     render(){
-        console.log(generatePallete(seedColors[2]));
         return (
             <div className="App">
-                <Pallete {...seedColors[2]}/>
+                <Pallete pallete={generatePallete(seedColors[2])}/>
             </div>
         );
     }
