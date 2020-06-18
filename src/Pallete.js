@@ -24,12 +24,16 @@ class Pallete extends React.Component{
     }
 
     render(){
-        const colorBoxes = this.props.pallete.colors[this.state.level].map(color => <ColorBox color={color[this.state.format]} name={color.name}/>);
+        const colorBoxes = this.props.pallete.colors[this.state.level].map(color => <ColorBox key={color.id} color={color[this.state.format]} name={color.name}/>);
 
         return (
             <div className="Pallete">
                 <Navbar level={this.state.level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
                 <div className="Pallete-colorboxes">{colorBoxes}</div>
+                <footer className="Pallete-footer">
+                    {this.props.pallete.palleteName}
+                    <span className="emoji">{this.props.pallete.emoji}</span>
+                </footer>
             </div>
         );
     }
