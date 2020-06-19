@@ -1,14 +1,14 @@
-.Pallete{
-    height: 100vh;
+.Palette{
+    height: 97vh;
     display: flex;
     flex-direction: column;
 }
 
-.Pallete-colorboxes{
+.Palette-colorboxes{
     height: 90%;
 }
 
-.Pallete-footer{
+.Palette-footer{
     background: white;
     height: 5vh;
     display: flex;

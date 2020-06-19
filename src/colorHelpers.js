@@ -2,23 +2,23 @@ import chroma from 'chroma-js';
 
 const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-function generatePallete(starterPallete){
-    let newPallete = {
-        palleteName: starterPallete.paletteName,
-        id: starterPallete.id,
-        emoji: starterPallete.emoji,
+function generatePalette(starterPalette){
+    let newPalette = {
+        paletteName: starterPalette.paletteName,
+        id: starterPalette.id,
+        emoji: starterPalette.emoji,
         colors: {}
     }
 
     for(let level of levels){
-        newPallete.colors[level] = [];
+        newPalette.colors[level] = [];
     }
 
-    for(let color of starterPallete.colors){
+    for(let color of starterPalette.colors){
         //Get 10 different shades for each color
         let scale = generateColors(color.color, 10).reverse();
         for(let i in scale){
-            newPallete.colors[levels[i]].push({
+            newPalette.colors[levels[i]].push({
                 name: `${color.name} ${levels[i]}`,
                 id: color.name.toLowerCase().replace(/ /g, '-'),
                 hex: scale[i],
@@ -28,7 +28,7 @@ function generatePallete(starterPallete){
         }
     }
     
-    return newPallete;
+    return newPalette;
 }
 
 //Specify a range
@@ -42,4 +42,4 @@ function generateColors(hexColor, numberOfColors){
     return chroma.scale(getRange(hexColor)).mode('lab').colors(numberOfColors);
 }
 
-export {generatePallete};
+export {generatePalette};
