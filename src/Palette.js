@@ -20,7 +20,6 @@ class Palette extends React.Component{
 
     changeFormat(val){
         this.setState({format: val});
-
     }
 
     render(){
@@ -31,7 +30,7 @@ class Palette extends React.Component{
 
         return (
             <div className="Palette">
-                <Navbar level={this.state.level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
+                <Navbar level={this.state.level} changeLevel={this.changeLevel} handleChange={this.changeFormat} showingAllColors={true}/>
                 <div className="Palette-colorboxes">{colorBoxes}</div>
                 <footer className="Palette-footer">
                     {palette.paletteName}
